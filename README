@@ -3,8 +3,8 @@ NAME
     (using libarchive)
 
 SYNOPSIS
-      use Archive::Peek::External;
-      my $peek = Archive::Peek::External->new( filename => 'archive.tgz' );
+      use Archive::Peek::Libarchive;
+      my $peek = Archive::Peek::Libarchive->new( filename => 'archive.tgz' );
       my @files = $peek->files();
       my $contents = $peek->file('README.txt')
 
@@ -19,7 +19,7 @@ METHODS
   new
     The constructor takes the filename of the archive to peek into:
 
-      my $peek = Archive::Peek::External->new( filename => 'archive.tgz' );
+      my $peek = Archive::Peek::Libarchive->new( filename => 'archive.tgz' );
 
   files
     Returns the files in the archive:

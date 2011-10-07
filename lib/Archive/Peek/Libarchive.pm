@@ -2,7 +2,7 @@ package Archive::Peek::Libarchive;
 use strict;
 use warnings;
 use Object::Tiny qw{ filename };
-our $VERSION = '0.35';
+our $VERSION = '0.36';
 
 require XSLoader;
 XSLoader::load( 'Archive::Peek::Libarchive', $VERSION );
@@ -32,8 +32,8 @@ Archive::Peek::Libarchive - Peek into archives without extracting them (using li
 
 =head1 SYNOPSIS
 
-  use Archive::Peek::External;
-  my $peek = Archive::Peek::External->new( filename => 'archive.tgz' );
+  use Archive::Peek::Libarchive;
+  my $peek = Archive::Peek::Libarchive->new( filename => 'archive.tgz' );
   my @files = $peek->files();
   my $contents = $peek->file('README.txt')
 
@@ -51,7 +51,7 @@ is fast.
 
 The constructor takes the filename of the archive to peek into:
 
-  my $peek = Archive::Peek::External->new( filename => 'archive.tgz' );
+  my $peek = Archive::Peek::Libarchive->new( filename => 'archive.tgz' );
 
 =head2 files
 
