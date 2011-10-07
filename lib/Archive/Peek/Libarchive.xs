@@ -3,7 +3,7 @@
 #include "XSUB.h"
 #include <archive.h>
 #include <archive_entry.h>
-/* #include "ppport.h" */
+#include "ppport.h"
 
 typedef struct archive* Archive__Peek__Libarchive;
 
