@@ -28,7 +28,7 @@ my $build = Module::Build->new(
     },
     module_name    => 'Archive::Peek::Libarchive',
     needs_compiler => 1,
-    requires       => { 'Test::Exception' => 0, 'Test::More' => 0 },
+    requires       => { 'Object::Tiny' => 0, 'Test::More' => 0 },
     sign           => 1,
 );
 $build->create_build_script;
