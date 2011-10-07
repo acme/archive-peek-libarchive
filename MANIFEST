@@ -1,4 +1,6 @@
 Build.PL
+CHANGES
+inc/Devel/CheckLib.pm
 lib/Archive/Peek/Libarchive.pm
 lib/Archive/Peek/Libarchive.xs
 lib/Archive/Peek/ppport.h

@@ -1,7 +1,11 @@
 #!perl
 use strict;
 use warnings;
+use lib qw(inc);
 use Module::Build;
+use Devel::CheckLib;
+
+check_lib_or_exit( lib => [qw(archive)] );
 
 my $build = Module::Build->new(
     build_requires => { 'ExtUtils::CBuilder' => 0 },
