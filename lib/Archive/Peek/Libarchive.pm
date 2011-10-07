@@ -23,3 +23,57 @@ sub file {
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Archive::Peek::Libarchive - Peek into archives without extracting them (using libarchive)
+
+=head1 SYNOPSIS
+
+  use Archive::Peek::External;
+  my $peek = Archive::Peek::External->new( filename => 'archive.tgz' );
+  my @files = $peek->files();
+  my $contents = $peek->file('README.txt')
+
+=head1 DESCRIPTION
+
+This module lets you peek into archives without extracting them. This is
+a wrapper to the libarchive C libary (http://code.google.com/p/libarchive/),
+which you must have installed (libarchive-dev package for Debian/Ubuntu).
+It supports many different archive formats and compression algorithms and
+is fast.
+
+=head1 METHODS
+
+=head2 new
+
+The constructor takes the filename of the archive to peek into:
+
+  my $peek = Archive::Peek::External->new( filename => 'archive.tgz' );
+
+=head2 files
+
+Returns the files in the archive:
+
+  my @files = $peek->files();
+
+=head2 file
+
+Returns the contents of a file in the archive:
+
+  my $contents = $peek->file('README.txt')
+
+=head1 AUTHOR
+
+Leon Brocard <acme@astray.com>
+
+=head1 COPYRIGHT
+
+Copyright (C) 2011, Leon Brocard.
+
+=head1 LICENSE
+
+This module is free software; you can redistribute it or
+modify it under the same terms as Perl itself.

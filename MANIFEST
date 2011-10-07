@@ -10,3 +10,7 @@ t/archive.tgz
 t/archive.zip
 t/pod.t
 t/simple.t
+README
+LICENSE
+META.yml
+META.json
