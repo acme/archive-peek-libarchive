@@ -1,0 +1,10 @@
+Build.PL
+lib/Archive/Peek/Libarchive.pm
+lib/Archive/Peek/Libarchive.xs
+lib/Archive/Peek/ppport.h
+MANIFEST			This list of files
+t/archive.tar.bz2
+t/archive.tgz
+t/archive.zip
+t/pod.t
+t/simple.t
