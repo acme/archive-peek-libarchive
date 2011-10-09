@@ -2,7 +2,7 @@ package Archive::Peek::Libarchive;
 use strict;
 use warnings;
 use Object::Tiny qw{ filename };
-our $VERSION = '0.36';
+our $VERSION = '0.37';
 
 require XSLoader;
 XSLoader::load( 'Archive::Peek::Libarchive', $VERSION );
