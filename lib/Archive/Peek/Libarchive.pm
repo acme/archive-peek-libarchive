@@ -22,6 +22,12 @@ sub file {
     return $file;
 }
 
+sub iterate {
+    my ( $self, $callback ) = @_;
+    my $filename = $self->filename;
+    Archive::Peek::Libarchive::_iterate( $filename, $callback );
+}
+
 1;
 
 __END__
@@ -36,6 +42,13 @@ Archive::Peek::Libarchive - Peek into archives without extracting them (using li
   my $peek = Archive::Peek::Libarchive->new( filename => 'archive.tgz' );
   my @files = $peek->files();
   my $contents = $peek->file('README.txt')
+
+  $peek->iterate(
+    sub {
+      my ( $filename, $contents ) = @_;
+      ...
+    }
+  );
 
 =head1 DESCRIPTION
 
@@ -64,6 +77,17 @@ Returns the files in the archive:
 Returns the contents of a file in the archive:
 
   my $contents = $peek->file('README.txt')
+
+=head2 iterate
+
+Iterate over all the files in the archive:
+
+  $peek->iterate(
+    sub {
+      my ( $filename, $contents ) = @_;
+      ...
+    }
+  );
 
 =head1 AUTHOR
 

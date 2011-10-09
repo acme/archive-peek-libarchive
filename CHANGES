@@ -1,5 +1,8 @@
 Revision history for Perl module Archive::Peek::Libarchive:
 
+0.37
+     - add iterate method
+
 0.36 Fri Oct  7 12:30:16 BST 2011
      - minor documentation fix (spotted by Claes Jakobsson)
 

@@ -24,4 +24,32 @@ sub test_archive {
 It is a file.
 ', "Can read archive/README inside $filename"
     );
+    my %files;
+    $peek->iterate(
+        sub {
+            my ( $filename, $contents ) = @_;
+            $files{$filename} = $contents;
+        }
+    );
+    is_deeply(
+        \%files,
+        {   'archive/a/b/B' => 'And this is inside a *and* inside b.
+
+It is a file.
+',
+            'archive/c/C' => 'This is inside c.
+
+It is a file.
+',
+            'archive/README' => 'This is in the root directory.
+
+It is a file.
+',
+            'archive/a/A' => 'And this is inside a.
+
+It is a file.
+'
+        },
+        'Can read all files via iterate'
+    );
 }

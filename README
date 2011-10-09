@@ -8,6 +8,13 @@ SYNOPSIS
       my @files = $peek->files();
       my $contents = $peek->file('README.txt')
 
+      $peek->iterate(
+        sub {
+          my ( $filename, $contents ) = @_;
+          ...
+        }
+      );
+
 DESCRIPTION
     This module lets you peek into archives without extracting them. This is
     a wrapper to the libarchive C libary
@@ -30,6 +37,16 @@ METHODS
     Returns the contents of a file in the archive:
 
       my $contents = $peek->file('README.txt')
+
+  iterate
+    Iterate over all the files in the archive:
+
+      $peek->iterate(
+        sub {
+          my ( $filename, $contents ) = @_;
+          ...
+        }
+      );
 
 AUTHOR
     Leon Brocard <acme@astray.com>
