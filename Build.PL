@@ -20,6 +20,11 @@ my $build = Module::Build->new(
         resources => {
             homepage =>
                 'http://search.cpan.org/dist/Archive-Peek-Libarchive/',
+            repository => {
+                type => 'git',
+                url  => 'git://github.com/acme/archive-peek-libarchive',
+                web  => 'https://github.com/acme/archive-peek-libarchive',
+            },
         },
     },
     'meta-spec' => {
