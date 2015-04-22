@@ -3,9 +3,7 @@ use strict;
 use warnings;
 use lib qw(inc);
 use Module::Build;
-use Devel::CheckLib;
-
-check_lib_or_exit( lib => [qw(archive)] );
+use Alien::Libarchive;
 
 my $build = Module::Build->new(
     build_requires => { 'ExtUtils::CBuilder' => 0 },
@@ -14,7 +12,8 @@ my $build = Module::Build->new(
     dist_abstract =>
         'Peek into archives without extracting them (using libarchive)',
     dist_author        => 'Leon Brocard <acme@astray.com>',
-    extra_linker_flags => ['-larchive'],
+    extra_compiler_flags => [Alien::Libarchive->cflags],
+    extra_linker_flags => [Alien::Libarchive->libs],
     license            => 'perl',
     meta_merge         => {
         resources => {
@@ -28,6 +27,7 @@ my $build = Module::Build->new(
     },
     module_name    => 'Archive::Peek::Libarchive',
     needs_compiler => 1,
+    configure_requires => { 'Alien::Libarchive' => 0.18 },
     requires       => { 'Object::Tiny' => 0, 'Test::More' => 0 },
     sign           => 1,
 );
