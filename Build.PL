@@ -17,6 +17,7 @@ my $build = Module::Build->new(
     extra_linker_flags => ['-larchive'],
     license            => 'perl',
     meta_merge         => {
+        'meta-spec' => { version => 2 },
         resources => {
             homepage =>
                 'http://search.cpan.org/dist/Archive-Peek-Libarchive/',
